@@ -1,7 +1,6 @@
 ##
 ## Trip Manager - Gerenciador de Viagens
-##
-## Como Testar:
+## Como rodar:
 
 Faça o clone do repositório na sua máquina
 
@@ -32,20 +31,12 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS="email@example.com"
 ```
 
-
 Após criar o arquivo `.env`, será necessário acessar o container da aplicação para rodar alguns comandos de configuração do Laravel.
 
-Para acessar o container use o comando `docker exec -it trip-manager-api bash`.
-
-Digite os seguintes comandos dentro do container:
+Digite o seguinte comando:
 
 ```bash
-composer install
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan jwt:secret
-php artisan optimize
+docker exec -it trip-manager-api bash -c "composer install && php artisan key:generate && php artisan migrate && php artisan db:seed && php artisan jwt:secret && php artisan optimize"
 ```
 
 ###  Testes
